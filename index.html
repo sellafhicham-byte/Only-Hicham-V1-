@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ONLY HICHAM V1 | TEAM HACKERS</title>
+    <style>
+        :root { --neon-blue: #00f2ff; --neon-purple: #bc13fe; --bg-color: #050505; }
+        body { margin: 0; padding: 0; background: var(--bg-color); color: #fff; font-family: 'Segoe UI', sans-serif; overflow-x: hidden; text-align: center; }
+        
+        /* نافذة الترحيب العائمة */
+        #welcome-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.95); display: flex; flex-direction: column;
+            justify-content: center; align-items: center; z-index: 9999;
+        }
+        .welcome-box { border: 2px solid var(--neon-blue); padding: 40px; border-radius: 20px; box-shadow: 0 0 20px var(--neon-blue); }
+        .enter-btn {
+            background: linear-gradient(45deg, var(--neon-blue), var(--neon-purple));
+            color: #fff; border: none; padding: 15px 40px; border-radius: 50px;
+            font-size: 20px; font-weight: bold; cursor: pointer; margin-top: 20px;
+            box-shadow: 0 0 15px var(--neon-purple); transition: 0.3s;
+        }
+
+        /* القائمة الرئيسية */
+        .header { background: #000; padding: 15px; border-bottom: 2px solid var(--neon-purple); }
+        .container { padding: 20px; max-width: 500px; margin: auto; }
+        .main-card {
+            background: rgba(20,20,20,0.9); border: 1px solid var(--neon-blue);
+            border-radius: 15px; padding: 15px; margin-bottom: 15px;
+            cursor: pointer; transition: 0.3s; font-weight: bold;
+        }
+        .main-card:hover { transform: scale(1.05); box-shadow: 0 0 15px var(--neon-purple); }
+
+        /* الأقسام الفرعية */
+        .sub-section { display: none; padding: 20px; animation: fadeIn 0.5s; }
+        .active { display: block; }
+        @keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
+
+        .btn-link {
+            display: block; background: #111; color: var(--neon-blue);
+            padding: 12px; margin: 10px 0; border: 1px solid var(--neon-purple);
+            border-radius: 10px; text-decoration: none; font-weight: bold;
+        }
+
+        /* الفوتر والرابط */
+        .footer-link {
+            background: var(--neon-purple); color: #fff; padding: 15px;
+            position: fixed; bottom: 0; width: 100%; text-decoration: none;
+            font-weight: bold; font-size: 14px; right: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- نافذة الترحيب -->
+    <div id="welcome-overlay">
+        <div class="welcome-box">
+            <h1 style="color: var(--neon-blue);">مرحباً بك</h1>
+            <p>ONLY HICHAM V1 | TEAM HACKERS</p>
+            <button class="enter-btn" onclick="enterSite()">دخول</button>
+        </div>
+    </div>
+
+    <div id="main-site" style="display: none;">
+        <header class="header">
+            <h2 style="margin:0; color: var(--neon-blue);">ONLY HICHAM V1</h2>
+        </header>
+
+        <div class="container" id="home-screen">
+            <div class="main-card" onclick="openSec('ff-sec')">Free Fire Hack</div>
+            <div class="main-card" onclick="openSec('pubg-sec')">PUBG Hacker</div>
+            <div class="main-card" onclick="openSec('fifa-sec')">FIFA Hacker</div>
+            <div class="main-card" onclick="openSec('roblox-sec')">Roblox Hacker</div>
+        </div>
+
+        <!-- قسم فري فاير -->
+        <div id="ff-sec" class="sub-section">
+            <h3 style="color: var(--neon-purple);">قائمة فري فاير</h3>
+            <a href="https://www.mediafire.com/file/kffyryuovfouuq4/ARQUIVO_REGEDIT_%2526_COMBO_%2528aimbot%252C_ffh4x%252C_aimfov%2529.7z/file" target="_blank" class="btn-link">سكريبت هيدشوت فري فاير</a>
+            <a href="#" class="btn-link">سكريبت سكينات (Coming Soon)</a>
+            <a href="https://www.mediafire.com/file/2ldb50ay51jxhlp/FF_V7A_OB52_7FARFF.xapk/file" target="_blank" class="btn-link">نسخة فري فاير للأجهزة الضعيفة</a>
+            <button class="enter-btn" style="padding:10px; font-size:14px;" onclick="goBack()">رجوع</button>
+        </div>
+
+        <!-- الأقسام الأخرى -->
+        <div id="pubg-sec" class="sub-section"><h1>Coming Soon</h1><button class="enter-btn" onclick="goBack()">رجوع</button></div>
+        <div id="fifa-sec" class="sub-section"><h1>Coming Soon</h1><button class="enter-btn" onclick="goBack()">رجوع</button></div>
+        <div id="roblox-sec" class="sub-section"><h1>Coming Soon</h1><button class="enter-btn" onclick="goBack()">رجوع</button></div>
+
+        <a href="https://www.instagram.com/9at_ri9?igsh=MXZhcmV1bjg5OTdxbg==" target="_blank" class="footer-link">
+            اضغط هنا للتواصل معي في الانستغرام 9at_ri9
+        </a>
+    </div>
+
+    <!-- موسيقى هادئة -->
+    <audio id="bgMusic" loop><source src="https://www.soundhelix.com" type="audio/mpeg"></audio>
+
+    <script>
+        function enterSite() {
+            document.getElementById('welcome-overlay').style.display = 'none';
+            document.getElementById('main-site').style.display = 'block';
+            document.getElementById('bgMusic').play();
+        }
+
+        function openSec(id) {
+            document.getElementById('home-screen').style.display = 'none';
+            document.querySelectorAll('.sub-section').forEach(s => s.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+        }
+
+        function goBack() {
+            document.querySelectorAll('.sub-section').forEach(s => s.classList.remove('active'));
+            document.getElementById('home-screen').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
+>
+
